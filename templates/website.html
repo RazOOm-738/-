@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+        <h1>Nova Video Downloader</h1>
+
+    <!-- Блок для сообщений об успехе -->
+    {% if success_msg %}
+        <div class="message success">
+            ✅ {{ success_msg }}
+        </div>
+    {% endif %}
+
+    <!-- Блок для ошибок -->
+    {% if error_msg %}
+        <div class="message error">
+            ❌ {{ error_msg }}
+        </div>
+    {% endif %}
+
+    <form method="POST" action="/download">
+    <form method="POST" action="/download">
+        <input type="url" name="video_url" placeholder="Вставь ссылку на видео" required>
+        <button type="submit">Скачать</button>
+    </form>
+</body>
+</html>
